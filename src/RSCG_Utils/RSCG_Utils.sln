@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCG_Utils_Console", "RSCG_Utils_Console\RSCG_Utils_Console.csproj", "{0F7F2BCC-93EF-46B7-B3D3-6C44E7E0F7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCG_Utils", "RSCG_Utils\RSCG_Utils.csproj", "{923B7766-82AE-4FEF-9D22-AD3ECE143FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F7F2BCC-93EF-46B7-B3D3-6C44E7E0F7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F7F2BCC-93EF-46B7-B3D3-6C44E7E0F7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F7F2BCC-93EF-46B7-B3D3-6C44E7E0F7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F7F2BCC-93EF-46B7-B3D3-6C44E7E0F7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923B7766-82AE-4FEF-9D22-AD3ECE143FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923B7766-82AE-4FEF-9D22-AD3ECE143FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923B7766-82AE-4FEF-9D22-AD3ECE143FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923B7766-82AE-4FEF-9D22-AD3ECE143FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27149F23-8F31-42F2-A480-E92FAA3FAC98}
+	EndGlobalSection
+EndGlobal

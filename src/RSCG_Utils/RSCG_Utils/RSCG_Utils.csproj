@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	  <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	  <IsRoslynComponent>true</IsRoslynComponent>
+	  <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.5.0" PrivateAssets="all" />
+   <None Include="$(OutputPath)\$(AssemblyName).dll"
+              Pack="true"
+              PackagePath="analyzers/dotnet/cs"
+              Visible="false" />
+  </ItemGroup>
+	<PropertyGroup>
+		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+		<None Include="../../../README.md" Pack="true" PackagePath="\" />
+
+	</ItemGroup>
+
+
+	<PropertyGroup>
+		<PackAsTool>false</PackAsTool>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Version>2023.501.951</Version>
+		<Authors>Andrei Ignat</Authors>
+		<Description>Additional files as strings</Description>
+		<Title>RSCG Utils</Title>
+		<PackageId>rscgutils</PackageId>
+		<PackageTags>C#;.NET;</PackageTags>
+		<!--<PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>tb.png</PackageIcon>
+    -->
+		<RepositoryUrl>https://github.com/ignatandrei/RSCG_Utils</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/ignatandrei/RSCG_Utils/tree/main/src/Local/LocalAPI</PackageProjectUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Copyright>MIT</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IncludeSymbols>true</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<Deterministic>true</Deterministic>
+		<DebugType>embedded</DebugType>
+
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+</Project>
