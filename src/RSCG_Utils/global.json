@@ -5,6 +5,6 @@
     "test": "dotnet test --configuration Release",
     "ci": "dotnet r build && dotnet r test",
     "prepack":"dotnet r build",
-    "pack":"pushd RSCG_Utils && dotnet pack --configuration Release --include-source  --include-symbols --no-build -o nuget && popd"
+    "pack":"pushd RSCG_Utils && dotnet pack --configuration Release --include-source  --include-symbols --no-build -o PACK && popd"
   }
 }
