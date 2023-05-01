@@ -1,6 +1,7 @@
 # RSCG_Utils
 
 Roslyn Source Code Generators Utils
+[![pack to nuget](https://github.com/ignatandrei/RSCG_Utils/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/ignatandrei/RSCG_Utils/actions/workflows/dotnet.yml)
 
 # Usage
 
