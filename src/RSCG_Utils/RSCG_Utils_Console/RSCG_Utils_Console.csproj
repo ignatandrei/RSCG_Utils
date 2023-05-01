@@ -5,13 +5,14 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
+
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="test\Afirst.gen.txt" />
-  </ItemGroup>
 
  	<ItemGroup>
+		<AdditionalFiles Include="test-a-b.gen.sql" />
 		<AdditionalFiles Include="Second.gen.txt" />
 		<AdditionalFiles Include="first.gen.txt" />
 		<AdditionalFiles Include="test\Afirst.gen.txt" />

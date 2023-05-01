@@ -13,16 +13,20 @@ namespace RSCG_Utils
         {
             IncrementalValuesProvider<AdditionalText> textFiles = initContext
                 .AdditionalTextsProvider
-                .Where(file => file.Path.EndsWith(".gen.txt"));
+                .Where(file => file.Path.Contains(".gen."));
 
             // read their contents and save their name
             IncrementalValuesProvider<(string name, string content)> namesAndContents = textFiles
-                .Select((text, cancellationToken) => (name: Path.GetFileNameWithoutExtension(text.Path), content: text.GetText(cancellationToken)!.ToString()));
+                .Select((text, cancellationToken) => (name: Path.GetFileName(text.Path), content: text.GetText(cancellationToken)!.ToString()));
 
             // generate a class that contains their values as const strings
             initContext.RegisterSourceOutput(namesAndContents, (spc, nameAndContent) =>
             {
-                string nameString=nameAndContent.name.Replace(".","_");
+                string nameString=nameAndContent.name
+                    .Replace(".","_")
+                    .Replace("-", "_")
+                    ;
+
                 string[] lines = nameAndContent.content
                     .Split('\n', '\r')
                     .Where(it => it.Trim().Length > 0)
@@ -31,7 +35,7 @@ namespace RSCG_Utils
                     .Select(it => "\"" + it +"\\r\\n"+ "\"")
                     .ToArray();
                 string content = string.Join("\r\n+",lines);
-                string hint = $"ConstStrings.{nameAndContent.name}";
+                string hint = $"MyAdditionalFiles.{nameAndContent.name}";
                 var str = $@"
     public static partial class MyAdditionalFiles
     {{

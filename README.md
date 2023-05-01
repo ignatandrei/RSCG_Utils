@@ -20,6 +20,6 @@ In your csproj
 In the code
 
 ```
-string x= MyAdditionalFiles.Second_gen;
+string x= MyAdditionalFiles.Second_gen_txt;
 ```
 
