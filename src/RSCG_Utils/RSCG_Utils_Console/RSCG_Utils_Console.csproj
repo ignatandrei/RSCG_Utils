@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
 	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
-
   </PropertyGroup>
 
 
@@ -17,7 +16,11 @@
 		<AdditionalFiles Include="first.gen.txt" />
 		<AdditionalFiles Include="test\Afirst.gen.txt" />
 	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\RSCG_Utils\RSCG_Utils.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-	  </ItemGroup>
+
+
+ 	<ItemGroup>
+ 	  <!--<PackageReference Include="rscgutils" Version="2023.501.951" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />-->
+		<ProjectReference Include="..\RSCG_Utils\RSCG_Utils.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+
+	</ItemGroup>
 </Project>
