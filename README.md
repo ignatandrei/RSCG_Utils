@@ -10,11 +10,13 @@ Roslyn Source Code Generators Utils
 
 ## Additional Files
 
+Works with https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
+
 In your csproj
 
 ```xml
 <ItemGroup>
- 	  <PackageReference Include="rscgutils" Version="2023.501.2230" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+ 	  <PackageReference Include="rscgutils" Version="2023.502.835" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup>
 <ItemGroup>
 	<AdditionalFiles Include="Second.gen.txt" />
@@ -25,7 +27,15 @@ In your csproj
 
 In the code
 
-```
+```csharp
 string x= MyAdditionalFiles.Second_gen_txt;
+```
+
+To debug, you can add into the .csproj
+```xml
+<PropertyGroup>
+	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
+</PropertyGroup>
 ```
 
