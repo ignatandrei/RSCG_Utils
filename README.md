@@ -41,3 +41,6 @@ To debug, you can add into the .csproj
 </PropertyGroup>
 ```
 
+More details at http://msprogrammer.serviciipeweb.ro/2023/05/08/file-to-csharp-const/
+
+
