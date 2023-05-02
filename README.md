@@ -10,7 +10,7 @@ Roslyn Source Code Generators Utils
 
 ## Additional Files
 
-Works with https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
+The files MUST contain .gen. in the name
 
 In your csproj
 
@@ -22,12 +22,14 @@ In your csproj
 	<AdditionalFiles Include="Second.gen.txt" />
 	<AdditionalFiles Include="first.gen.txt" />
 	<AdditionalFiles Include="test\Afirst.gen.txt" />
+	<AdditionalFiles Include="sql/**/*" />
 </ItemGroup>
 ```
 
 In the code
 
 ```csharp
+//see https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
 string x= MyAdditionalFiles.Second_gen_txt;
 ```
 
