@@ -1,22 +1,11 @@
-# RSCG_Utils
 
-Roslyn Source Code Generators Utils
-
-[![pack to nuget](https://github.com/ignatandrei/RSCG_Utils/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ignatandrei/RSCG_Utils/actions/workflows/dotnet.yml)
-
-[![pack to nuget](https://img.shields.io/nuget/dt/rscgutils?style=for-the-badge)](https://www.nuget.org/packages/rscgutils)
-
-# Usage
-
-## Additional Files
-
-Allow you to see additional files directly as C# const. For this, please add some .gen. files to the project.
+Add one or more  .gen. files ( like .gen.txt ) to the project.
 
 In your csproj
 
 ```xml
 <ItemGroup>
- 	  <PackageReference Include="rscgutils" Version="2023.502.835" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+ 	  <PackageReference Include="rscgutils" Version="2023.514.835" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup>
 <ItemGroup>
 	<AdditionalFiles Include="Second.gen.txt" />

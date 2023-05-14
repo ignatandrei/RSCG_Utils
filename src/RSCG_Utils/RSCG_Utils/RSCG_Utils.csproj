@@ -5,6 +5,7 @@
 	  <Nullable>enable</Nullable>
 	  <IsRoslynComponent>true</IsRoslynComponent>
 	  <LangVersion>latest</LangVersion>
+	  <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,14 +27,17 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
 		<None Include="../../../README.md" Pack="true" PackagePath="\" />
-
+		<None Include="readme.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
 	</ItemGroup>
 
 
 	<PropertyGroup>
 		<PackAsTool>false</PackAsTool>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Version>2023.502.835</Version>
+		<Version>2023.514.835</Version>
 		<Authors>Andrei Ignat</Authors>
 		<Description>Additional files as strings</Description>
 		<Title>RSCG Utils</Title>
