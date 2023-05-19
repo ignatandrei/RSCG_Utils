@@ -44,3 +44,8 @@ To debug, you can add into the .csproj
 More details at http://msprogrammer.serviciipeweb.ro/2023/05/08/file-to-csharp-const/
 
 
+# More Roslyn Source Code Generators
+
+You can find more RSCG with examples at [Roslyn Source Code Generators](https://ignatandrei.github.io/RSCG_Examples/v2/)
+
+
