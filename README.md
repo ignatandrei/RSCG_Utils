@@ -44,6 +44,27 @@ To debug, you can add into the .csproj
 More details at http://msprogrammer.serviciipeweb.ro/2023/05/08/file-to-csharp-const/
 
 
+## Json2Class
+
+If you have an additional json file, you can have a file from this
+
+```xml
+<ItemGroup>
+	<AdditionalFiles Include="my.gen.json" />
+</ItemGroup>
+```
+
+And you can have from the code
+```csharp
+
+var json = System.Text.Json.JsonSerializer
+    .Deserialize<GeneratedJson.my_gen_json>(MyAdditionalFiles.my_gen_json);
+
+ArgumentNullException.ThrowIfNull( json );
+Console.WriteLine( ":hosts"+json.AllowedHosts );
+
+```
+
 # More Roslyn Source Code Generators
 
 You can find more RSCG with examples at [Roslyn Source Code Generators](https://ignatandrei.github.io/RSCG_Examples/v2/)
