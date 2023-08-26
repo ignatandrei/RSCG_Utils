@@ -15,18 +15,17 @@ and without slash
 """"""";
 Console.WriteLine(x);
 
-var newJson = System.Text.Json.JsonSerializer.Deserialize<GeneratedJson.Simple_gen_json>(MyAdditionalFiles.Simple_gen_json);
+var newJson = System.Text.Json.JsonSerializer
+    .Deserialize<GeneratedJson.Simple_gen_json>
+    (MyAdditionalFiles.Simple_gen_json);
+
 ArgumentNullException.ThrowIfNull(newJson);
+
 Console.WriteLine(":hosts" + newJson.AllowedHosts);
 
 
 var json = System.Text.Json.JsonSerializer
-    .Deserialize<GeneratedJson.my_gen_json>(MyAdditionalFiles.my_gen_json,
-    new JsonSerializerOptions
-    {
-        PropertyNameCaseInsensitive = true,
-    }
-    );
+    .Deserialize<GeneratedJson.my_gen_json>(MyAdditionalFiles.my_gen_json);
 
 ArgumentNullException.ThrowIfNull( json );
 Console.WriteLine( ":hosts"+json.AllowedHosts );
