@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,12 +10,20 @@
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Simple.gen.json" />
+  </ItemGroup>
+
+
 
  	<ItemGroup>
+		<AdditionalFiles Include="Simple.gen.json" />
 		<AdditionalFiles Include="test-a-b.gen.sql" />
 		<AdditionalFiles Include="Second.gen.txt" />
 		<AdditionalFiles Include="first.gen.txt" />
 		<AdditionalFiles Include="test\Afirst.gen.txt" />
+		<AdditionalFiles Include="my.gen.json" />
+
 	</ItemGroup>
 
 

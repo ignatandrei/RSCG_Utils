@@ -1,0 +1,35 @@
+@using RoslynSettingEditor.Json2Class;
+@inherits RazorBlade.HtmlTemplate<ModelAppSettings>
+@{
+    string nameSpaceInit = $"namespace {Model.nameSpaceName} {{";
+    string ToolName = "RSCG_UTILS";
+    string ToolVersion = "1.0";
+}
+using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+ 
+ @nameSpaceInit
+
+@foreach(var classModel in Model.classModels)
+{
+    @Html.Raw("\r\n")
+    @Html.Raw("public class ") @classModel.ClassName @Html.Raw("{")
+    @Html.Raw("\r\n")
+
+        
+        @foreach (var prop in classModel.Properties)
+        {
+            @Html.Raw("\r\n")
+            @Html.Raw($"[System.Text.Json.Serialization.JsonPropertyName(\"{prop.PropertyNameOriginal}\")]")
+            @Html.Raw("\r\n")
+            @Html.Raw($"public {prop.PropertyType} {prop.PropertyName} {{get;set;}}  ") 
+        }
+
+    @Html.Raw("\r\n")
+    @Html.Raw("}")
+
+}
+//end class
+@Html.Raw("}") //endnamespace

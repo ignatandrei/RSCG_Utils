@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
+using RoslynSettingEditor.Json2Class;
 using System;
 using System.Data;
 using System.IO;
@@ -49,6 +50,14 @@ namespace RSCG_Utils
         public const string {nameString} =  {content};
     }}";
                 spc.AddSource(hint,str );
+
+                if (nameAndContent.name.EndsWith(".json"))
+                {
+                    string rootTypeName = nameAndContent.name.Replace(".", "_");
+                    var g = new GeneratorFromJSON();
+                    var generatedCode = g.GenerateFile(nameAndContent.content, rootTypeName,  "GeneratedJson");
+                    spc.AddSource("Definition"+hint, generatedCode);
+                }
             });
         }
     }
