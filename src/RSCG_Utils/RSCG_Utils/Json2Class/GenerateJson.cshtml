@@ -8,7 +8,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-
+#nullable enable
  
  @nameSpaceInit
 
@@ -24,7 +24,7 @@ using System.Runtime.Serialization;
             @Html.Raw("\r\n")
             @Html.Raw($"[System.Text.Json.Serialization.JsonPropertyName(\"{prop.PropertyNameOriginal}\")]")
             @Html.Raw("\r\n")
-            @Html.Raw($"public {prop.PropertyType} {prop.PropertyName} {{get;set;}}  ") 
+            @Html.Raw($"public {prop.PropertyType}? {prop.PropertyName} {{get;set;}}  ") 
         }
 
     @Html.Raw("\r\n")
@@ -33,3 +33,4 @@ using System.Runtime.Serialization;
 }
 //end class
 @Html.Raw("}") //endnamespace
+#nullable restore

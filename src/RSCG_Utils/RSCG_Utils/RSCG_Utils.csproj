@@ -56,7 +56,7 @@
 	<PropertyGroup>
 		<PackAsTool>false</PackAsTool>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Version>2023.826.1704</Version>
+		<Version>2023.827.621</Version>
 		<Authors>Andrei Ignat</Authors>
 		<Description>Additional files as strings</Description>
 		<Title>RSCG Utils</Title>

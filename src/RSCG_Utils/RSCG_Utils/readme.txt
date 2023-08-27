@@ -5,7 +5,7 @@ In your csproj
 
 ```xml
 <ItemGroup>
- 	  <PackageReference Include="rscgutils" Version="2023.826.1704" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+ 	  <PackageReference Include="rscgutils" Version="2023.827.621" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup>
 <ItemGroup>
 	<AdditionalFiles Include="Second.gen.txt" />
