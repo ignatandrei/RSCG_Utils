@@ -15,7 +15,7 @@ using System.Runtime.Serialization;
 @foreach(var classModel in Model.classModels)
 {
     @Html.Raw("\r\n")
-    @Html.Raw("public class ") @classModel.ClassName @Html.Raw("{")
+    @Html.Raw("public partial class ") @classModel.ClassName @Html.Raw("{")
     @Html.Raw("\r\n")
 
         
