@@ -15,18 +15,18 @@ and without slash
 """"""";
 Console.WriteLine(x);
 
-var newJson = System.Text.Json.JsonSerializer
-    .Deserialize<GeneratedJson.Simple_gen_json>
-    (MyAdditionalFiles.Simple_gen_json);
+//var newJson = System.Text.Json.JsonSerializer
+//    .Deserialize<NS_GeneratedJson_my_gen_json.Simple_gen_json>
+//    (MyAdditionalFiles.Simple_gen_json);
 
-ArgumentNullException.ThrowIfNull(newJson);
+//ArgumentNullException.ThrowIfNull(newJson);
 
-Console.WriteLine(":hosts" + newJson.AllowedHosts);
+//Console.WriteLine(":hosts" + newJson.AllowedHosts);
 
 
 var json = System.Text.Json.JsonSerializer
-    .Deserialize<GeneratedJson.my_gen_json>(MyAdditionalFiles.my_gen_json);
+    .Deserialize<NS_GeneratedJson_my_gen_json.my_gen_json>(MyAdditionalFiles.my_gen_json);
 
-ArgumentNullException.ThrowIfNull( json );
-Console.WriteLine( ":hosts"+json.AllowedHosts );
-//Console.WriteLine(json.Logging.LogLevel.Microsoft);
+ArgumentNullException.ThrowIfNull(json);
+Console.WriteLine(":hosts" + json.AllowedHosts);
+Console.WriteLine(json.Logging.LogLevel.Microsoft);

@@ -55,7 +55,7 @@ namespace RSCG_Utils
                 {
                     string rootTypeName = nameAndContent.name.Replace(".", "_");
                     var g = new GeneratorFromJSON();
-                    var generatedCode = g.GenerateFile(nameAndContent.content, rootTypeName,  "GeneratedJson");
+                    var generatedCode = g.GenerateFile(nameAndContent.content, rootTypeName, "NS_GeneratedJson_" + rootTypeName);
                     spc.AddSource("Definition"+hint, generatedCode);
                 }
             });
