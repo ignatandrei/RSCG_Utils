@@ -3,7 +3,7 @@
 @{
     string nameSpaceInit = $"namespace {Model.nameSpaceName} {{";
     string ToolName = "RSCG_UTILS";
-    string ToolVersion = "1.0";
+    string ToolVersion = "2023.827.1021";
 }
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,12 @@ using System.Runtime.Serialization;
 
 @foreach(var classModel in Model.classModels)
 {
+    @Html.Raw("\r\n")
+    @Html.Raw("/// <summary>");
+    @Html.Raw("\r\n")
+    @Html.Raw($"/// generated with {ToolName} {ToolVersion}")
+    @Html.Raw("\r\n")
+    @Html.Raw("/// </summary>")
     @Html.Raw("\r\n")
     @Html.Raw("public partial class ") @classModel.ClassName @Html.Raw("{")
     @Html.Raw("\r\n")
@@ -26,7 +32,11 @@ using System.Runtime.Serialization;
             @Html.Raw("\r\n")
             @Html.Raw($"public {prop.PropertyType}? {prop.PropertyName} {{get;set;}}  ") 
         }
-
+    @Html.Raw("\r\n")
+    @Html.Raw($"public static {@classModel.ClassName}? Deserialize(string? text){{ ")
+    @Html.Raw($"if(text == null) return null; ")
+    @Html.Raw($"return System.Text.Json.JsonSerializer.Deserialize<{classModel.ClassName}>(text); ")
+    @Html.Raw($"}} ")
     @Html.Raw("\r\n")
     @Html.Raw("}")
 

@@ -29,4 +29,7 @@ var json = System.Text.Json.JsonSerializer
 
 ArgumentNullException.ThrowIfNull(json);
 Console.WriteLine(":hosts" + json.AllowedHosts);
-Console.WriteLine(json.Logging.LogLevel.Microsoft);
+Console.WriteLine(json.Logging?.LogLevel?.Microsoft);
+
+var newJson = NS_GeneratedJson_Simple_gen_json.Simple_gen_json.Deserialize(MyAdditionalFiles.Simple_gen_json);
+Console.WriteLine(":hosts" + newJson?.AllowedHosts);
