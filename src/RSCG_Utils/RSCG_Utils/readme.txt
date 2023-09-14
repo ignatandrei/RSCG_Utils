@@ -5,7 +5,7 @@ In your csproj
 
 ```xml
 <ItemGroup>
- 	  <PackageReference Include="rscgutils" Version="2023.827.1021" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+ 	  <PackageReference Include="rscgutils" Version="2023.914.2016" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup>
 <ItemGroup>
 	<AdditionalFiles Include="Second.gen.txt" />
@@ -50,6 +50,9 @@ To debug, you can add into the .csproj
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
 </PropertyGroup>
 ```
+
+Also, memoization of the return of the functions. Just add suffix _MemoPure
+
 
 More details at http://msprogrammer.serviciipeweb.ro/2023/05/08/file-to-csharp-const/
 

@@ -65,6 +65,53 @@ Console.WriteLine( ":hosts"+json.AllowedHosts );
 
 ```
 
+## Memoization of function returns
+
+Put _MemoPure and the return of the function will be memo-ized
+
+```csharp
+public long Test_MemoPure()
+{
+    Console.WriteLine("calculating type");
+    return this.GetType().ToString().GetHashCode();
+}
+public async Task<long> fib(long nr)
+{
+    await Task.Delay(1000);
+    //Console.WriteLine("calculated value for " + nr);
+    if (nr <= 1) return 1;
+    if (nr == 2) return 2;
+    return await fib(nr - 1) + await fib(nr - 1);
+}
+
+public async Task<long> fibonacci_MemoPure(long nr)
+{
+    if (nr <= 1) return 1;
+    if (nr == 2) return 2;
+    await Task.Delay(1000);
+    return await fibonacci(nr - 1) + await fibonacci(nr - 1);
+
+}
+```
+
+And call
+
+```csharp
+fibTest f = new();
+Console.WriteLine("first time :" + f.Test());
+Console.WriteLine("second time :" + f.Test());
+
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("no memo :"+await f.fib(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("memo :" + await f.fibonacci(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("FAST memo :" + await f.fibonacci(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+
+
+```
+
 # More Roslyn Source Code Generators
 
 You can find more RSCG with examples at [Roslyn Source Code Generators](https://ignatandrei.github.io/RSCG_Examples/v2/)
