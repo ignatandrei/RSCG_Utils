@@ -51,6 +51,7 @@
 
 	<ItemGroup>
 		<AdditionalFiles Include="Json2Class/GenerateJson.cshtml" />
+		<AdditionalFiles Include="MemoPure/GeneratePartialMemoPure.cshtml" />
 	</ItemGroup>
 
 	<PropertyGroup>

@@ -8,6 +8,7 @@
 	 
 	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedX</CompilerGeneratedFilesOutputPath>
+
   </PropertyGroup>
 
   <ItemGroup>

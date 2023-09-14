@@ -1,5 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using RSCG_Utils_Console;
 using System.Text.Json;
+fibTest f = new();
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("no memo :"+await f.fib(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("memo :" + await f.fibonacci(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+Console.WriteLine("FAST memo :" + await f.fibonacci(5));
+Console.WriteLine(DateTime.Now.ToString("mm_ss"));
+
+Console.WriteLine("first time :" + f.Test());
+Console.WriteLine("second time :" + f.Test());
+
 
 Console.WriteLine("Hello, World!");
 Console.WriteLine(MyAdditionalFiles.first_gen_txt);
