@@ -21,7 +21,7 @@ public class FunctionMemoGenerator
 
     }
 
-    private void Execute(Compilation compilation, ImmutableArray<ClassDeclarationSyntax> classes, SourceProductionContext spc)
+    private void Execute(Compilation compilation, ImmutableArray<TypeDeclarationSyntax> classes, SourceProductionContext spc)
     {
         if (classes.IsDefaultOrEmpty)return;
         var distinctClasses = classes.Distinct().ToArray();
@@ -61,10 +61,12 @@ public class FunctionMemoGenerator
     bool IsMethodToBeGenerated(SyntaxNode node)
     => node is MethodDeclarationSyntax m  &&   m.Identifier.ValueText.Contains("_MemoPure");
 
-    ClassDeclarationSyntax? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
+    TypeDeclarationSyntax? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
     {
+        
         var methodDeclarationSyntax = (MethodDeclarationSyntax)context.Node;
-        return methodDeclarationSyntax?.Parent as ClassDeclarationSyntax;
+        return methodDeclarationSyntax?.Parent as TypeDeclarationSyntax;
+
     }
 
 }
