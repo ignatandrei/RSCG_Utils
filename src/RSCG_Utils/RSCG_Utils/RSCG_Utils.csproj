@@ -57,9 +57,9 @@
 	<PropertyGroup>
 		<PackAsTool>false</PackAsTool>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Version>2023.914.2016</Version>
+		<Version>2024.1857.1858</Version>
 		<Authors>Andrei Ignat</Authors>
-		<Description>Additional files as strings; json to class</Description>
+		<Description>Additional files as strings; json to class;memo purifying functions</Description>
 		<Title>RSCG Utils</Title>
 		<PackageId>rscgutils</PackageId>
 		<PackageTags>C#;.NET;</PackageTags>

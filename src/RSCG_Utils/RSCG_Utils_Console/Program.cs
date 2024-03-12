@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using RSCG_Utils_Console;
+﻿using RSCG_Utils_Console;
 using System.Text.Json;
 fibTest f = new();
 Console.WriteLine("first time :" + f.Test());
