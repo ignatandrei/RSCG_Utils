@@ -21,7 +21,7 @@ internal partial class fibTest
         if (nr <= 1) return 1;
         if (nr == 2) return 2;
         await Task.Delay(1000);
-        return await fibonacci(nr - 1) + await fibonacci(nr - 1);
+        return await this.fibonacci(nr - 1) + await this.fibonacci(nr - 1);
 
     }
 }

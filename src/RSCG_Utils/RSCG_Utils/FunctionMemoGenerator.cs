@@ -26,10 +26,23 @@ public class FunctionMemoGenerator
         if (classes.IsDefaultOrEmpty)return;
         var distinctClasses = classes.Distinct().ToArray();
         if(((distinctClasses?.Length)??0) == 0) return;
-        foreach (var cds in distinctClasses!)
+        foreach (var tds in distinctClasses!)
         {
-            var nameClass = cds.Identifier.ValueText;
-            var ns = cds.Parent as BaseNamespaceDeclarationSyntax;
+            var nameClass = tds.Identifier.ValueText;
+            string nameDefinition = "";
+            if(tds is ClassDeclarationSyntax cds)
+            {
+                nameDefinition= "class";
+            }   
+            if(tds is RecordDeclarationSyntax rds)
+            {
+                nameDefinition= "record";
+            }
+            if(string.IsNullOrWhiteSpace(nameDefinition))
+            {
+                throw new ArgumentException("only class or record ");
+            }
+            var ns = tds.Parent as BaseNamespaceDeclarationSyntax;
             var nameNamespace = "";
             while(ns != null)
             {
@@ -37,7 +50,7 @@ public class FunctionMemoGenerator
                 ns=ns.Parent as BaseNamespaceDeclarationSyntax;
             }
 
-            var members= cds
+            var members= tds
                 .Members
                 .OfType<MethodDeclarationSyntax>()
                 .Where(IsMethodToBeGenerated)
@@ -47,7 +60,7 @@ public class FunctionMemoGenerator
             {
                 var nameMethod = method.Identifier.ValueText;
                 
-                var memo = new SaveMemo(nameClass,nameNamespace,method);
+                var memo = new SaveMemo(nameDefinition ,nameClass,nameNamespace,method);
                 MemoPure.GeneratePartialMemoPure generate = new(memo);
                 var text = generate.Render();
                 spc.AddSource(memo.fullName(), text);

@@ -2,7 +2,8 @@
 
 namespace RSCG_Utils;
 public class SaveMemo
-{ 
+{
+    public readonly string nameDefinition;
     public readonly string className;
     public readonly string nameSpaceName;
     public readonly MethodDeclarationSyntax mds;
@@ -15,8 +16,9 @@ public class SaveMemo
     public readonly string[] typeParameters;
     public readonly string[] nameParameters;
     public readonly string[] typeAndNameParameters;
-    public SaveMemo(string ClassName, string nameSpaceName, MethodDeclarationSyntax mds)
+    public SaveMemo(string nameDefinition,string ClassName, string nameSpaceName, MethodDeclarationSyntax mds)
     {
+        this.nameDefinition = nameDefinition;
         className = ClassName;
         this.nameSpaceName = nameSpaceName;
         this.mds = mds;

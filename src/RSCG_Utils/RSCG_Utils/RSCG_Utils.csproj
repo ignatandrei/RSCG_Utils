@@ -57,7 +57,7 @@
 	<PropertyGroup>
 		<PackAsTool>false</PackAsTool>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Version>2024.1858.1931</Version>
+		<Version>2024.1859.1955</Version>
 		<Authors>Andrei Ignat</Authors>
 		<Description>Additional files as strings; json to class;memo purifying functions</Description>
 		<Title>RSCG Utils</Title>
