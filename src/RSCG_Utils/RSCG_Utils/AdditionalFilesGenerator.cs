@@ -4,6 +4,27 @@ internal class AdditionalFilesGenerator : IIncrementalGenerator
 {
     public void Initialize(IncrementalGeneratorInitializationContext initContext)
     {
+        try
+        {
+            InitializeMe(initContext);
+        }
+        catch (Exception ex)
+        {
+            var prov = initContext.CompilationProvider;
+            initContext.RegisterSourceOutput(prov, (spc,_) =>
+            {
+
+                var dd= new DiagnosticDescriptor("RSCGUTILS_AddFiles_001", "Error", ex.Message +"--"+ ex.StackTrace, "Error", DiagnosticSeverity.Error, true);
+                var diag = Diagnostic.Create(dd, Location.None);
+                spc.ReportDiagnostic(diag);
+            }
+            );
+            //initContext.RegisterSourceOutput(_, (spc, _) => spc.ReportDiagnostic(Diagnostic.Create(new DiagnosticDescriptor("RSCG001", "Error", ex.Message, "Error", DiagnosticSeverity.Error, true), Location.None))
+        }
+    }
+    public void InitializeMe(IncrementalGeneratorInitializationContext initContext)
+    {
+
         IncrementalValuesProvider<AdditionalText> textFiles = initContext
             .AdditionalTextsProvider
             .Where(file => file.Path.Contains(".gen."));
