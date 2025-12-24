@@ -23,7 +23,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="System.Text.Json" Version="7.0.3" GeneratePathProperty="true" />
+		<PackageReference Include="System.Text.Json" Version="8.0.4" GeneratePathProperty="true" />
 
 		<None Include="../../../README.md" Pack="true" PackagePath="\" />
 		<None Include="readme.txt">
