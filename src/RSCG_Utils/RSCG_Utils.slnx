@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="RSCG_Utils/RSCG_Utils.csproj" />
+  <Project Path="RSCG_Utils_Console/RSCG_Utils_Console.csproj" />
+</Solution>

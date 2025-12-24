@@ -7,7 +7,7 @@ using System.Collections.Concurrent;
     string separatedArguments = string.Join(",", Model.nameParameters);
     string typeAndNameArgs = string.Join(",", Model.typeAndNameParameters);
     string keyDict = Model.HasArguments ? $"Tuple<{separatedTypes}>" : "string";
-    string declDict = $"System.Collections.Concurrent.ConcurrentDictionary<{keyDict} , {Model.returnTypeNoTask}> {nameDict} =new System.Collections.Concurrent.ConcurrentDictionary<{keyDict}, {Model.returnTypeNoTask}>();";
+    string declDict = $"static System.Collections.Concurrent.ConcurrentDictionary<{keyDict} , {Model.returnTypeNoTask}> {nameDict} =new System.Collections.Concurrent.ConcurrentDictionary<{keyDict}, {Model.returnTypeNoTask}>();";
     string Tuple2Args = string.Join(",",Model.nameParameters.Select((it, nr) => $"args.Item{nr+1}"));
     string asyncText = Model.IsTask ? "async" : "";
     string awaitText = Model.IsTask ? "await" : "";
